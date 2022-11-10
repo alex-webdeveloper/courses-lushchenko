@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array push splice</title>
+</head>
+
+<body>
+    <script>
+        const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const b = ['a', 'b', 'c', 'd', 'e', 'f'];
+        console.log(a.length);
+        console.log(a.push(10, 9, 77));  // let c = a.push(10, 9, 77); console.log(c); тоже самое 
+        console.log(a);
+
+        b.push('j', 'e');
+        console.log(b);
+        console.log(b.pop()); // удаление последнего элемента массива и вывода его отдельно
+        console.log(b.pop());
+        console.log(b);
+
+        // удаление элемента внутри массива
+        delete a[3];  // длинна массива не изменилась, индекса 3 нет а запись empty
+        console.log(a);
+        a.splice(2, 9, 'hi'); // удаление элементов с какого индекса и сколько и вставка нового эл.
+        console.log(a);
+
+        // shift  удаление эл. вначале массива; unshift довавление эл. вначале массива
+
+
+
+    </script>
+</body>
+
+</html>

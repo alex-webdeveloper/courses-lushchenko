@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МЕТОДЫ FILTER</title>
+</head>
+
+<body>
+    <script>  // FILTER после проверки условия возвращает массив из элементов попадающие под условия
+        //  внутри функции всегда прописывать return true or return false
+        const a = [1, 3, 5, 77, -8, 99, 43, 27, 8, 0, - 4, 2, 3, 12];
+        let b = a.filter((item, index, array) => {
+            return index; // 0 индекс пропустит и выведет начиная с 1 индекса
+        })
+        console.log(a);
+        console.log(b);
+
+
+        const clients = [
+            { 'iin': 'g8r8v3w9', 'user': 'Ivanov', 'debt': 4 },
+            { 'iin': 'g9m0v3e8', 'user': 'Petrov', 'debt': 0 },
+            { 'iin': 's458v3p7', 'user': 'Ivanov', 'debt': 908 },
+            { 'iin': 'a348von7', 'user': 'Sidorov', 'debt': 3487 },
+            { 'iin': 'o788v2u5', 'user': 'OOO MMM', 'debt': 23 },
+            { 'iin': 'c5r8vin4', 'user': 'Spitrbank', 'debt': 34 },
+        ];
+
+        let debts = clients
+            .filter(item => (item.debt >= 10))
+            .sort((a, b) => (b.debt - a.debt)); // сортировка от большего к меньшему
+        console.log(clients);
+        console.log(debts);
+    </script>
+</body>
+
+</html>

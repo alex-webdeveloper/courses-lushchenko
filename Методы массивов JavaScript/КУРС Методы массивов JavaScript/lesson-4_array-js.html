@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIFT, UNSHIFT, SLICE</title>
+</head>
+
+<body>
+    <script>   //  SHIFT удаляет элемент с начала массива и массив переиндексируется
+        // SHIFT возвращает первый удаленный элемент массива и не применимо к строке - ошибка!!
+        let a = [3, 7, 9];
+        let b = a.shift();
+        console.log(b);
+        a.shift();
+        console.log(a);
+
+
+        // UNSHIFT добавляет элемент в начало массива и возврящает новую длину массива и не применимо к строке - ошибка!!
+        let c = a.unshift(22);
+        console.log(c);
+        console.log(a);
+
+
+        // SLICE выводит новый массив с какой индекса указанно включительно и до какого не включительно
+        //  удаляет элементы в начале массива и  применимо к строке !!!
+        let d = [33, 44, 55, 88, 99, 77, 21, 59];
+        let f = d.slice(3, 5);
+        console.log(d);
+        console.log(f);
+
+
+        let str = 'Hello';
+        // console.log(str.shift());  //  не применимо к строке - ошибка!!
+        // console.log(str.unshift('w')); // не применимо к строке - ошибка!!
+        console.log(str.slice(1, 4)); //   применимо к строке !!!
+
+        var bar = 5;
+        bar >>= 2;
+        console.log(bar);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+.row {
+    min-height: calc(100vh - 148px);
+}
+footer {
+    height: 50px;
+    display: flex;
+    align-items: self-end;
+    justify-content: center;
+}
+.img-fluid.min {
+    width: 100px;
+}
+.img-fluid.average {
+    width: 200px;
+}
+.nav.flex-column a {
+    color: white;
+}

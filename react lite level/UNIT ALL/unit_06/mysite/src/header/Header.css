@@ -1,0 +1,13 @@
+.header {
+    padding: 1px;
+    height: min-content;
+    background: #68418e;
+    color: white;
+}
+
+.header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

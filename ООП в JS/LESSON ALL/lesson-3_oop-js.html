@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>КЛАСС, ОБЪЕКТ, КОНСТРУКТОР. СВОЙСТВА И МЕТОДЫ. THIS.</title>
+  </head>
+  <body>
+    <script>
+      // class - > function
+      // абстрактный class - > class - > object
+      class User {
+        constructor(username, password) {
+          this.username = username;
+          this.password = password;
+        }
+        validatePassword() {
+          console.log("work parent pass");
+          if (this.password.length > 6) return true;
+          return false;
+        }
+      }
+      let a = "Oleg";
+      let b = "7772311";
+
+      const person = new User(a, b);
+      // console.log(person);
+      // console.log(person.username); // Oleg
+      // console.log(person.validatePassword());
+
+      class Student extends User {
+        constructor(username, password, nickname) {
+          super(username, password);
+          this.nickname = nickname;
+        }
+        getStudentsCourses() {
+          return [1, 2];
+        }
+
+        validatePassword() {
+          super.validatePassword(); // обращение к родителю и запуск его метода(функции)
+          if (this.password.length > 10) return true;
+          return false;
+        }
+      }
+      let firshStudent = new Student(a, b, "uu123");
+
+      console.log(person);
+      console.log(person.username); // Oleg
+      console.log(person.validatePassword());
+      console.log(firshStudent);
+      console.log(firshStudent.getStudentsCourses()); // [1, 2];
+      console.log(firshStudent.validatePassword());
+    </script>
+  </body>
+</html>

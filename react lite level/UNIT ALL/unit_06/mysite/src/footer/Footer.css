@@ -1,0 +1,8 @@
+.footer {
+    background: rgb(58, 52, 52);
+    color: white;
+    height: 10vh;
+}
+.footer p {
+    padding: 20px;
+}

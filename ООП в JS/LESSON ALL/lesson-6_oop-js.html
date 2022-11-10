@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>СТАТИЧЕСКИЕ СВОЙСТВА И МЕТОДЫ.</title>
+</head>
+
+<body>
+  <script>
+    // СТАТИЧЕСКИЕ СВОЙСТВА  static test = true;   console.log(User.test); // true
+    // СТАТИЧЕСКИЕ МЕТОДЫ:  static getRole(); это методы которые прописанны в классе и их можно
+    // вызвать без создания экземпляра   console.log(User.getRole());
+    // ООП это ксасс который описывает некоторую сущнось, этот класс содержит свойства этой сущности
+    // которые необходимы для описания
+    // класс = (свойства + методы()) = сущность + вспомогательные элементы, которые помогают манипулировать данными
+    class User {
+      static test = true;
+      constructor(name) {
+        this.name = name;
+      }
+      static getRole(email) {
+        // реализация
+        return "student";
+      }
+      static getId(email) { }
+
+      static getUser(id) {
+        // return user
+      }
+    }
+    const person = new User("Alex");
+    console.log(person);
+    // Alex - > перейти на форум
+    // role
+    // - > класс - > объект - > object.getRole()
+    //   console.log(person.getRole()); // ошибка person не содердит getRole()
+    console.log(User.getRole("example@net")); // student
+    console.log(User.test); // true
+
+    class Student extends User {
+      static test = false;
+      constructor(name) {
+        super();
+      }
+    }
+    console.log(Student.getRole("out")); // student
+    console.log(Student.test); // false
+
+    function toMoney(n) {
+      // n = n.toFixed(2);
+      // let a = new Intl.NumberFormat("ru", {
+      //   minimumFractionDigits: 2,
+      // });
+      // return new Intl.NumberFormat("ru", {
+      //   minimumFractionDigits: 2,
+      // }).format(n);
+      // return n.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 "); // es
+      // return n.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$& ");
+    }
+
+    /a+/.test("eee aaa bbb"); // вернет true
+    /^a+$/.test("aaaaaaaaa"); // вернет true
+
+    let a = "7799";
+    !a.includes(".") ? console.log("es") : console.log("not");
+
+    let n = [123, 45];
+    // n = String(n);
+    // for (let i = 0; i < n.length; i++) {
+    n[1] = 8;
+    // }
+    // n[1] = 8;
+    console.log(n);
+
+    console.log("я".charCodeAt());
+    console.log(9254380.8733.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 "));
+  </script>
+</body>
+
+</html>

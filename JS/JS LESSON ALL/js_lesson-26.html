@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FETCH</title>
+    <style>
+        /* img {
+            width: 70%;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <img src="" alt="">
+
+    <script>
+        // GET запрос с помощью fetch
+
+        fetch("http://gp3st0.tmweb.ru/api/?a=list")
+            .then(response => {
+                console.log(response);
+                return response.json(); //   return response.text();
+            })
+            .then(data => {
+                console.log(data);
+                document.querySelector('img').src = data.images[7].small;
+            });
+
+        // FETCH БЕЗ ИСПОЛЬЗОВАНИЯ PROMISE, А С ПОМОЩЬЮ  AWAIT
+
+        (async () => {
+            // let response = await fetch("http://gp3st0.tmweb.ru/api/?a=list");
+            // response = await response.json(); // читаем ответ в формате JSON
+            // console.log(response);
+
+        })();
+
+        // data == response
+
+
+        // // POST запрос с помощью fetch
+
+        // fetch('http://getpost.itgid.info/index2.php', {
+        //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        //     // mode: 'cors', // no-cors, *cors, same-origin -- НЕ ОБЯЗАТЕЛЬНЫЕ ПАРАМЕТРЫ
+        //     // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached -- НЕ ОБЯЗАТЕЛЬНЫЕ ПАРАМЕТРЫ
+        //     // credentials: 'same-origin', // include, *same-origin, omit -- НЕ ОБЯЗАТЕЛЬНЫЕ ПАРАМЕТРЫ
+        //     headers: {
+        //         // 'Content-Type': 'application/json',
+        //         'Content-Type': 'application/x-www-form-urlencoded',
+        //     },
+        //     // redirect: 'follow', // manual, *follow, error -- НЕ ОБЯЗАТЕЛЬНЫЕ ПАРАМЕТРЫ
+        //     // referrerPolicy: 'no-referrer', // no-referrer, *client -- НЕ ОБЯЗАТЕЛЬНЫЕ ПАРАМЕТРЫ
+        //     body: 'auth=DdC33D7d2C2a7&action=7',//JSON.stringify(data), // body data type must match "Content-Type" header
+        // })
+        //     .then(response => response.text())
+        //     .then(data => {
+        //         console.log(data);
+        //     })
+
+
+
+    // .then(response => response.json());
+    // return await response.json(); // parses JSON response into native JavaScript objects
+
+
+
+    // fetch(request)
+    //     .then(response => response.blob())
+    //     .then(blob => {
+    //         image.src = URL.createObjectURL(blob);
+    //     });
+
+    // const request = new Request('http://getpost.itgid.info/index2.php', { method: 'POST', body: '{"auth": "DdC33D7d2C2a7"}' });
+
+    // const URL = request.url;
+    // const method = request.method;
+    // const credentials = request.credentials;
+    // const bodyUsed = request.bodyUsed;
+
+
+
+    // let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
+    // let response = await fetch(url);
+
+    // let commits = await response.json(); // читаем ответ в формате JSON
+
+    // console.log(commits[0].author.login);
+
+
+
+    // var myImage = document.querySelector('img');
+
+    // var myRequest = new Request('png');
+
+    // fetch('http://getpost.itgid.info/index2.php?auth=DdC33D7d2C2a7&action=7')
+    //     .then(response => response.blob())
+    //     .then(function (myBlob) {
+    //         var objectURL = URL.createObjectURL(myBlob);
+    //         myImage.src = objectURL;
+    //     });
+
+
+     // Пример отправки POST запроса:
+    // async function postData(url = '', data = {}, num) {
+    //         const response = await fetch(url, {
+    //             method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    //             headers: {
+    //                 'Content-Type': 'application/x-www-form-urlencoded',
+    //             },
+    //             body: `auth=DdC33D7d2C2a7&action=${num}`,
+    //         });
+    //         return await response.text(); // parses JSON response into native JavaScript objects
+    //     }
+
+    //     postData('http://getpost.itgid.info/index2.php', { year: 1980 }, 8)
+    //         .then((data) => {
+    //             console.log(data); // JSON data parsed by `response.json()` call
+    //         });
+
+
+    </script>
+</body>
+
+</html>

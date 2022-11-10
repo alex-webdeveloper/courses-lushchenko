@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIND, FINDINDEX, LASTINDEXOF</title>
+</head>
+
+<body>
+    <script> // FIND метод который применяется на каждому элементу массива функцию(НЕ РАБОТАЕТ НА СТРОКЕ)
+        // и если функция вернет true то FIND будет остановлен и БУДЕТ ВОЗВРАЩЕН ЭЛЕМЕНТ на катором сработало true
+        // если не разу не отработает то возвращает undefined
+        const a = [20, 30, 40, 50];
+        const b = a.find(item => { // index, array не обезательный аргумент
+            if (item >= 33 && item <= 45) return true;
+        });
+        console.log(b);
+
+
+        const n = [
+            { name: 'ivan', age: 54 },
+            { name: 'iren', age: 47 },
+            { name: 'alex', age: 14 },
+            { name: 'serg', age: 89 },
+            { name: 'oleg', age: 17 },
+        ];
+
+        const c = n.find(item => { // 
+            if (item.age <= 18) return true;
+        });
+        console.log(c);
+
+        // FINDINDEX метод который применяется на каждому элементу массива функцию(НЕ РАБОТАЕТ НА СТРОКЕ)
+        // и если функция вернет true то FIND будет остановлен и БУДЕТ ВОЗВРАЩЕН ИНДЕКС ЭЛЕМЕНТА на катором сработало true
+        // если не разу не отработает то возвращает -1
+        const v = [22, 49, 44, 55, 77, 88, 99];
+        const m = v.findIndex(item => { // 
+            if (item > 48) return true;
+        });
+        console.log(m);
+
+        // LASTINDEXOF метод выводит индекс последнего искомого элемента (РАБОТАЕТ СО СТРОКОЙ)
+        // если елемент не найден вывод -1
+        let z = 'hello';
+        let x = z.lastIndexOf('l');
+        console.log(x);
+        let k = [3, 7, 8, 9, 3];
+        let l = k.lastIndexOf(3);
+        console.log(l);
+
+        let str4 = 'a_baba_galamaga_tvoe_korito_est_nesti';
+        let res = [...str4];
+        console.log(res);
+
+
+        // МЕТОД FOREACH
+        let forr = [35, 57, 85, 91, 23];
+        let fIch = [];
+        forr.forEach((item, index) => {
+            fIch.push(index, item);
+        })
+        console.log(fIch); // [0, 35, 1, 57, 2, 85, 3, 91, 4, 23];
+
+        //  1.13. синтаксис оБъектного литерала
+
+        let ar = [0, 1, 4, 9, 16, 25]
+        ar.push(99) // тепер􏰀 arr содержит [0, 1, 4, 9, 16] const newLength = arr.push(x) // тепер􏰀 arr содержит [0, 1, 4, 9, 16, x]
+        console.log(ar)
+    </script>
+
+</body>
+
+</html>

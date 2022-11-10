@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>ООП В ES6</title>
+    <style>
+        .orange {
+            padding: 5px;
+            color: #fff;
+            background: orange;
+
+        }
+
+        .red {
+            padding: 5px;
+            color: #fff;
+            background: red;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="out">out </div>
+    <div class="out-2">out-2</div>
+    <div class="out-3">out-3</div>
+    <div class="out-4">out-4 </div>
+    <script>
+        function string(arr) {
+            let out = '';
+            for (let key in arr) {
+                out += `&${key}=${arr[key]}`;
+            }
+            return out;
+        }
+        document.querySelector('.out').innerHTML += string({ action: 1, });
+
+
+        function myAlert(a, c, d) {
+            let b = `<p class='${c}'>${a}</p>`;
+            document.querySelector(d).innerHTML += b;
+        };
+        myAlert('Hi', 'red', '.out');
+        myAlert('Hello', 'orange', '.out-2');
+
+
+        // OOP; CLASS JS - писать с большой буквы
+
+        class Alert {
+            constructor(a, c, d) {
+                this.messange = a;
+                this.cssClass = c;
+                this.out = d;
+            }
+
+            showAl() {
+                document.querySelector(this.out).innerHTML += `<p class='${this.cssClass}'>${this.messange}</p>`;
+            }
+
+            myAlert() {
+                alert('class Alert: ' + this.messange);
+            }
+        }
+
+        class AlertIcon extends Alert {
+            constructor(a, c, d, icon) {
+                super(a, c, d);
+                this.icon = icon;  // новое войство
+            }
+
+            showIconAlert() {
+                document.querySelector(this.out).innerHTML = `<p class='${this.cssClass}'><i class="material-icons">${this.icon}</i> ${this.messange}</p>`;
+            }
+
+            myAlert() {
+                alert('class AlertIcon: ' + this.messange);
+            }
+        }
+
+
+        let myObject = new Alert('myObject', 'orange', '.out-3');
+        console.log(myObject);
+        myObject.showAl();
+
+        let myObject2 = new AlertIcon('myObject2', 'orange', '.out-4', 'account_balance');
+        console.log(myObject2);
+        myObject2.showIconAlert();
+        myObject2.myAlert();
+
+
+    // <i class="material-icons">account_balance</i> иконка гугол: material.io
+    </script>
+</body>
+
+</html>

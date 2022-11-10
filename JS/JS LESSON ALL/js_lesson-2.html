@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ОСНОВЫ ВВОДА ДАННЫХ</title>
+</head>
+
+<body>
+  <input type="text" class="input-in" value="55">
+  <button>Go</button>
+  <div class="out"></div>
+  <input type="text" class="inp">
+  <div class="text"></div>
+  <script>
+    let inputIn = document.querySelector(".input-in");
+    let button = document.querySelector("button");
+    let div = document.querySelector('.out');
+    button.onclick = function () {
+      // console.log("Работает!!!!");
+      //let b = +inputIn.value;
+      // console.log(b + 25);
+      div.innerHTML = inputIn.value;
+      inputIn.value = '';
+    };
+
+    // button.onclick = function () {
+    //   document.querySelector('.out').innerHTML = document.querySelector(".input-in").value;
+    // }
+    // document.querySelector('.text').textContent = '<h1>this<h1>';
+    //let i = document.querySelector('.input-in');
+
+
+   // function t16() {
+      //let t = document.querySelector('.inp').value;
+      //t = parseInt(t);
+      //k = t;
+     // let t = +document.querySelector('.inp').value;
+     // document.querySelector('.text').textContent = t;
+   // }
+
+   // document.querySelector('button').onclick = t16;
+  </script>
+</body>
+
+</html>

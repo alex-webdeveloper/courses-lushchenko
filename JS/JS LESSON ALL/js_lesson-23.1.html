@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCALSTORAGE. СОХРАНЯЕМ ВСЕ: 1 часть, JSON.parse(object)</title>
+</head>
+
+<body>
+    <div>out</div>
+
+    <script> // когда сохраняется массив в localStorage он преобразеутся в строку
+        // что-бы коректно сохранить массив нужно получить и преобразовать его, применить в JSON строку и обратно 
+
+        window.addEventListener('storage', function () {
+            console.log('change');
+            // document.querySelector('div').textContent = localStorage.getItem('butt');
+        });
+
+        localStorage.dataPr = 'es ' + 5;
+        localStorage.setItem('data', 5);  // даем ключ- это data, значение это 5 
+        console.log(localStorage.getItem('data')); // получение значения (5) в консоли
+
+        const a = [3, 4, 5];
+        // localStorage.setItem('keyA', a); // так сохраняем массив как строка(не верный метод)
+        localStorage.setItem('keyA', JSON.stringify(a)); // верный метод
+        let b = localStorage.getItem('keyA');
+        b = JSON.parse(b); // преобразование в массив
+        console.log(b);
+        // console.log(b[1]);
+        // console.log(typeof b); // проверка на тип данных
+
+        const c = {
+            hello: 5,
+            k: 2,
+            4: 'hi'
+        };
+        // localStorage.setItem('keyA', a); // так сохраняем массив как строка(не верный метод)
+        // localStorage.setItem('keyC', JSON.stringify(c)); // верный метод
+        // let d = localStorage.getItem('keyC');
+        // d = JSON.parse(d);
+        // console.log(d['4']);
+        // console.log(typeof d); // проверка на тип данных
+    </script>
+</body>
+
+</html>

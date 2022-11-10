@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>МЕТОД МАССИВА MAP AND FILTER</title>
+</head>
+
+<body>
+  <script>
+    // MAP возвращает новый массив равный по длине исходного массива
+    // const a = [3, 4, 5];
+    // let a = [];
+    // a[0] = 5;
+    // a[4] = 7;
+    // let b = a.map(item => { // let b = a.map(item => item * 3) тоже самое
+    //     console.log(item);
+    //     return item * 3;
+    // })
+    // console.log(b);
+
+    // const c = [3, 4, 5];
+    // let d = c.map((item, index) => {
+    //     console.log(index);
+    //     return index;
+    // })
+    // console.log(d);
+
+    // FILTER после проверки условия всегда возвращает return true or return false
+    const f = [5, 8, 55, 9, 0, 7, 24];
+    let w = f.filter((item, index) => {
+      if (item % 2 === 0) return true;
+    });
+    console.log(w);
+
+    // 2 часть
+    const temp = [0, 4, 4, 6, 8, 10, 6, 4, 3, -1, -2, -2];
+    // F = C*1.8 + 32;
+    let tF = temp.map((item, index) => {
+      console.log(item);
+      return 10 + item * 1.8; // преобразование по шкале фарингейта из цельсия
+    });
+    console.log(tF);
+
+    let x = [33, 44, 55];
+    // x[10] = 90;
+    console.log('-------');
+    let v = x.map((item, index, array) => {
+      console.log(array[index]);
+      console.log(item);
+      if (index === 2) {
+        array[index + 1] = 77;
+      }
+      return item;
+    });
+    console.log(x, 'old arr'); // а исходный массив изменился
+    console.log(v, 'new arr'); // новый массив не изменился и стал как исходный
+
+    const m = [
+      { name: " Ivan", order: 12, sum: "123,5" },
+      { name: " Sergey    ", order: 12, sum: "123.5" },
+      { name: "matilda  ", order: 12, sum: "123, 5" },
+      { name: " Ivanov Petr  ", order: 12, sum: "123,50" },
+    ];
+    let mBack = m.map((item) => {
+      item.name = item.name.trim().toLocaleLowerCase();
+      return item;
+    });
+    console.log(mBack);
+  </script>
+</body>
+
+</html>

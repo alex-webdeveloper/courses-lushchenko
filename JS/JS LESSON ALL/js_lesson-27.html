@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РАБОТАЕМ С ПРОМИСАМИ (PROMISE)</title>
+</head>
+
+<body>
+    <div>Div</div>
+    <script>
+        let div = document.getElementsByTagName('div')[0];
+        div.style = 'color:red; background:green;';
+        // let arr = ["hello", "hello "];
+        // document.querySelector('div').innerHTML = arr.join(' ');
+        // console.log(arr);
+
+        // resolve это параметор который получается когда PROMISE возвращает результат как мы задумали 
+        // reject это параметор когда не получается у PROMISE это сделать сделать (ERROR)
+
+        let pr = new Promise((resolve, reject) => {
+            fetch('http://getpost.itgid.info/index2.php?auth=DdC33D7d2C2a7&action=7')
+                .then((response) => {
+                    resolve(response.text());
+                })
+        });
+
+        let pr2 = new Promise((resolve, reject) => {
+            fetch('http://getpost.itgid.info/index2.php?auth=DdC33D7d2C2a7&action=5')
+                .then((response) => {
+                    resolve(response.text());
+                })
+        });
+
+        // объеденить ответы на запросы
+        Promise.all([pr, pr2]).then(value => {
+            console.log(value);
+            console.log(value[0]);  // pr
+            console.log(value[1]);   // pr2
+
+        });
+
+        // FETCH БЕЗ ИСПОЛЬЗОВАНИЯ PROMISE, А С ПОМОЩЬЮ  AWAIT
+
+        (async () => {
+            let response = await fetch("http://gp3st0.tmweb.ru/api/?a=list");
+            response = await response.json(); // читаем ответ в формате JSON
+            console.log(response);
+
+        })();
+        // отдельная записть
+
+        // pr.then(data => {
+        //     console.log(data);
+        // })
+
+        // pr2.then(data => {
+        //     console.log(data);
+        // })
+
+
+        // let promise = new Promise(function (resolve, reject) {
+        //     setTimeout(() => resolve("done!"), 1000);
+        // });
+        // // resolve запустит первую функцию, переданную в then
+        // promise.then(
+        //     result => console.log(result), // выведет "done!" через одну секунду
+        //     error => console.log(error) // не будет запущена
+        // );
+
+        const promise = new Promise((resolve, reject) => {
+            resolve('Promise done');  // Промис выполнен
+            reject('Promise rejected');   // Промис уже не может быть отклонен
+        });
+        promise.then(value => {
+            console.log(value);
+        })
+
+
+        // BLOB WORK IMAGES
+        // (async () => {
+        //     let response = await fetch('http://getpost.itgid.info/index2.php?auth=DdC33D7d2C2a7&action=5');
+
+        //     let blob = await response.blob(); // скачиваем как Blob-объект
+
+        //     // создаём <img>
+        //     let img = document.createElement('img');
+        //     img.style = 'position:fixed;top:10px;left:10px;width:100px';
+        //     document.body.append(img);
+
+        //     // выводим на экран
+        //     img.src = URL.createObjectURL(blob);
+
+        //     // setTimeout(() => { // прячем через три секунды
+        //     //     img.remove();
+        //     //     URL.revokeObjectURL(img.src);
+        //     // }, 3000);
+        // })();
+
+
+
+        //  CREATE IMAGE
+
+        // let img = document.createElement('img');
+        // img.setAttribute('src', 'http://cdn2.iconfinder.com/data/icons/free-color-halloween-icons/24/Witch-Hat-512.png');
+        // document.querySelector('.im').append(img);
+    </script>
+</body>
+
+</html>

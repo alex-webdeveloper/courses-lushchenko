@@ -1,0 +1,17 @@
+main {
+    min-height: 70vh;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+main ul li {
+    padding: 10px;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+main p {
+    text-align: start;
+    padding-left: 10px;
+}

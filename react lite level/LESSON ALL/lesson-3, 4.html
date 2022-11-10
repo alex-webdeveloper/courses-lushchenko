@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ООП В ES6. ПОНЯТИЕ СВОЙСТВ И МЕТОДОВ, КЛАССЫ, ОБЪЕКТЫ, НАСЛЕДОВАНИЕ. ЧАСТЬ 1, 2</title>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <script>
+        class Header {
+            constructor(img, h1, h2) {
+                this.src = img;
+                this.h1 = h1;
+                this._h2 = h2;
+            }
+            render(x) {
+                // куда отрисовывать
+                console.log(this.h1);
+                let out = '';
+                out += `<img src='${this.src}' alt='logo' class='logo'>`;
+                out += `<h1>${this.h1}</h1>`;
+                out += `<h2>${this._h2}</h2>`;
+                document.getElementById(x).innerHTML = out;
+            }
+            static hello(a) {
+                console.log('work static method ' + a);
+            }
+        }
+
+        // класс - > объект
+        // метод - > рисует // render (что рисовать, куда рисовать)
+        // const a = {
+        //     key: value,
+        //     key2: value,
+        //     key3: function () {
+
+        //     }
+        // }
+        const img = "https://cdn0.iconfinder.com/data/icons/flat-round-system/512/reactos-256.png";
+        const header = new Header(img, 'Hello', 'World');
+        console.log(header);
+        header.render('header');
+
+        class Header2 extends Header {
+            constructor(img, h1, h2, hero) {
+                super(img, h1, h2);
+                this._hero = hero;
+            }
+            get hero() {
+                return this._hero;
+            }
+            set hero(c) {
+                this._hero = c;
+            }
+        }
+
+        const header2 = new Header2('img', 'new site', 'build', 'thing');
+        console.log(header2);
+        // header2._hero = 'proverca';
+        // console.log(header2);
+        header2.hero = 'Google';
+        console.log(header2);
+        console.log(header2.hero);
+        // header2._h2 = 3.789; // приватное свойство перезапись, но по соглашению делать это не нужно
+        header2.render('header');
+
+        Header.hello('hi');
+
+    </script>
+</body>
+
+</html>

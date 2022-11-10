@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/mustard-ui.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ООП в JS - товары</title>
+    <style>
+        ul>span {
+            background-color: aqua;
+        }
+        .col-6 {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Unit 12. Корзина в ООП стиле</h1>
+        <h2>ООП в JS - курс Лущенко Александра</h2>
+        <div class="goods"></div>
+    </div>
+
+    <script src="goods.js"></script>
+    <hr>
+    <ul>
+        <li><span>span</span></li>
+        <li><span>span</span></li>
+        <li><span>span</span></li>
+        <span>span</span>
+        <li>li</li>
+        <li>li</li>
+    </ul>
+    <div class="row">
+        <div class="col-12">1sapiente dolorem exercitationem, rem deleniti nemo eos impedit.</div>
+        <div class="col-12">2srit est quod nulla animi velit aperiam consequatur ea omnis.</div>
+        <div class="col-12">3a amet, quos, velit, tenetur dolorum inventore beatae nihil ratione officiis nobis.</div>
+    </div>
+    <script>
+        console.log(document.querySelectorAll('ul span')); 4
+        console.log(document.querySelectorAll('ul>li>span')); 3
+    </script>
+</body>
+
+</html>

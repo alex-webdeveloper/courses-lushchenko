@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SORT, REVERSE</title>
+</head>
+
+<body>
+    <script> // REVERSE изменяет исходный массив !!! что-бы применить к стороке нужно строку перевести в массив
+        // let a = [1, 2, 3, 4];
+        // a[100] = 200;
+        // a.reverse();
+        // console.log(a);
+        // a.reverse(); // обратно возвращает исходный массив
+        // console.log(a);
+
+        // // SORT сортирует по коду символов и работает как сорт строк по алфавиту
+        // let c = [3, 22, 1, 4, 5];  // (5) [1, 22, 3, 4, 5]
+        // c = ['c', 'a', 'C', 4]; //  (4) [4, "C", "a", "c"]
+        // c.sort();
+        // console.log(c);
+
+        // // SORT сортировка чисел
+        // let f = [2, 4, 55, 3, 9, 33, 9];
+        // f.sort((a, b) => {
+        //     return a - b; // вернет от меньшего  к большему 
+        //     // return b - a;       // вернет от большего к меньшему
+        // })
+        // console.log(f);
+
+        // // сортировка массива обьектов
+        // let n = [
+        //     { name: 'ivan', age: 54 },
+        //     { name: 'iren', age: 47 },
+        //     { name: 'alex', age: 14 },
+        //     { name: 'serg', age: 89 },
+        //     { name: 'oleg', age: 17 },
+        // ];
+
+        // n.sort((a, b) => {
+        //     return a.age - b.age;
+
+        // })
+        // console.log(n);
+
+
+        // // СОРТИРОВКА МАССИВА ОТ МЕНЬШЕГО ЧИСЛА К БОЛЬШЕМУ
+        // var m = [1, 4, 2, 6, 7, 3, 5, 2, 9];
+        // var count = m.length - 1;
+        // for (var i = 0; i < count; i++)
+        //     for (var j = 0; j < count - i; j++)
+        //         if (m[j] > m[j + 1]) {
+        //             var max = m[j];
+        //             m[j] = m[j + 1];
+        //             m[j + 1] = max;
+        //         }
+        // console.log(m);
+        // let arr = [1, 22, 33, 4, 5, 6, 7, 88];
+        // for (let j = 0; j < arr.length; j += 2) {
+        //     let k = j + 1;
+        //     temp = arr[j];
+        //     arr[j] = arr[k];
+        //     arr[k] = temp;
+        // }
+
+        // console.log(arr);
+
+
+        let str = 'mazahackercrackall';
+        str = str.split('').reverse();
+
+        console.log(str);
+        for (let i = 0; i < a5.length; i += 2) {
+            // if (a5[i] % 2 !== 0) {
+            let k = i + 1;
+            let n = a5[i];
+            a5[i] = a5[k];
+            a5[k] = n;
+            a5_res.push(a5[i], a5[k])
+
+        }
+
+          // for (let i = 0; i < a5.length; i++) {
+    //     if (i % 2 == 0) a5_res.push(a5[i + 1], a5[i]);
+
+    // }
+    </script>
+</body>
+
+</html>

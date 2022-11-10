@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>СОЗДАНИЕ ВИДЖЕТА GRIDVIEW С ИСПОЛЬЗОВАНИЕМ ООП (3)</title>
+</head>
+
+<body>
+  <div>СОЗДАНИЕ ВИДЖЕТА GRIDVIEW С ИСПОЛЬЗОВАНИЕМ ООП (3)</div>
+  <script>
+    class User {
+      constructor(title) {
+        this.title = title;
+      }
+      setName(name) {
+        if (name !== "") {
+          this._name = name;
+          return name;
+        }
+        return false;
+      }
+      get name() {
+        return this._name;
+      }
+    }
+    let a = new User("Alex");
+    if (a.setName("Ivan")) {
+      console.log("Work");
+    } else {
+      console.log("Problem");
+    }
+    console.log(a);
+    console.log(a.setName(""));
+    console.log(a.name);
+    console.log(a.setName("88"));
+    console.log(a.name);
+    for (let i = 0; i < 10; i++) {
+      setTimeout(() => console.log(i), 1000 * i);
+    }
+
+    (function () {
+      let div = document.querySelector('div');
+      div.style.cssText = 'overflow: hidden; white-space: nowrap; font-size: 2rem; margin: 0 auto; border-right: 0.15em solid #18bdec;'
+      for (let i = 0; i <= 1000; i++) {
+        setTimeout(() => div.style.width = i + 'px', 10 * i);
+      }
+      // div.style.height = '100px';
+    })()
+  </script>
+</body>
+
+</html>

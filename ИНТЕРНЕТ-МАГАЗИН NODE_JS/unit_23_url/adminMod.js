@@ -1,0 +1,20 @@
+module.exports = function (req, res, con, next) {
+    // console.log(req.cookies);
+    // console.log(req.cookies.hash);
+    // console.log(req.cookies.id);
+    if (req.cookies.hash == undefined || req.cookies.id == undefined) {
+        res.redirect('/login');
+        return false;
+    }
+    con.query(
+        'SELECT * FROM users WHERE id=' + req.cookies.id + ' and hash="' + req.cookies.hash + '"',
+        function (error, result) {
+            if (error) throw error;;
+            console.log(result);
+            if (result.length == 0) {
+                console.log('error user not found');
+                res.redirect('/login');
+            }
+            else next();
+        });
+}

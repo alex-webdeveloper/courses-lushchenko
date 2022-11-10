@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <link rel="stylesheet" href="JS UNIT ALL/unit_01/style.css">
+    <style>
+        .one {
+            background: green;
+        }
+
+        .two {
+            color: orange;
+        }
+
+        .three {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p class="one" data-k="privet">One p</p>
+    <button class="toggle">Toggle</button>
+    <p id="thiss">Выберите тип бензина:</p>
+    <input type="text" class="gallons">
+    <div>
+        <button class="gas" data="1.2">A-92</button>
+        <button class="gas" data="1.6">A-95</button>
+        <button class="gas" data="1.9">A-98</button>
+    </div>
+    <div class="test">Test div</div>
+    <div class="out"></div>
+    <script> //  elem.getAttribute('data')- получение значения атрибута
+        // elem.setAttribute('data-key', 8) - добавление нового атрибута
+        const one = document.querySelector('.one');
+        // one.style.width = "150px";
+        // one.style.paddingBottom = "50px";
+        // // console.log(one.style);
+
+        // one.classList.add('two', 'three');
+        // one.classList.remove('three');
+
+        // const togg = document.querySelector('.toggle');
+        // togg.onclick = function () {
+        //     this.classList.toggle('three');
+        //     togg.classList.add('three');
+        // }
+
+        // // атрибуты data - это приставка для корректных атрибутов
+        console.log(one.getAttribute('data-k')); // получение значения атрибута - privet
+        // console.log(document.querySelector('link').getAttribute('href'));
+        one.setAttribute('data-num', 5); // добавление нового атрибута 
+        console.log(one.getAttribute('data-num'));
+
+        // выбор бензина и расчет стоимости с условием выбранного его количества 
+        let gas = document.querySelectorAll('.gas');
+        for (elem of gas) {
+            elem.onclick = function () {
+                let gallons = +document.querySelector('.gallons').value;
+                let amount = +this.getAttribute('data');
+                console.log(gallons * amount);
+                document.querySelector('.out').textContent = gallons * amount;
+            }
+        }
+
+
+        // // создание элементов 
+        // let a = document.createElement('div');
+        // console.log(a);
+        // a.innerHTML = 'Hello new element';
+        // a.classList.add('one');
+        // document.querySelector('.test').appendChild(a);
+
+        // // this
+        // let user = {
+        //     name: "Джон",
+        //     age: 30,
+
+        //     sayHi() {
+        //         // this - это "текущий объект"
+        //         alert(this.name);
+        //     }
+
+        // };
+
+        // user.sayHi(); // Джон
+
+        // событие this при стрелочной функции даст undefined
+        document.querySelector('#thiss').onclick = function () {
+            this.innerHTML += document.querySelector('p').innerHTML;
+        }
+
+        //довавление элементов appendChild == after; prepend == before    
+    </script>
+</body>
+
+</html>

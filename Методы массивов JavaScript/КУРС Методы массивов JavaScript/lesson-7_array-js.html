@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REDUCE, ISARRAY</title>
+</head>
+
+<body>
+  <script>
+    // ISARRAY метод определяет массив получен или нет (Array.isArray(elem)) true or false.
+    // REDUCE используют что-бы получить единственный результат
+    // и возвращает результат обработанного массива
+    // accum and item 2 обязательных параметра и },0) это с каккого элемента начинается цикл
+    let a = [22, 33, 44];
+    let b = a.reduce((accum, item) => {
+      // accum += item;  // accum = accum + item (тоже самое) = сумма элементов
+      accum += " " + item; // получение строки
+      return accum;
+    });
+    console.log("------");
+    console.log(b);
+
+    // найти сумму элементов
+    let c = [-3, 7, -9, 0, -3, -5, 7, 100, 9];
+    let d = c.reduce((accum, item) => {
+      if (item > 0) {
+        accum += item;
+        //  return accum; // сокращение записи
+      }
+      // else {
+      return accum;
+      // }
+    }, 0);
+    console.log(d);
+
+    // найти большее значение
+    let w = [123, 7, -9, 0, -3, -5, 7, 100, 9];
+    let e = c.reduce((accum, item) => {
+      if (item > accum) {
+        accum = item;
+      }
+      return accum;
+    });
+    console.log(e, 'найти большее значение');
+
+    // переиндексировать массив
+    let n = [
+      { id: 44, sity: "srt" },
+      { id: 34, sity: "asb" },
+      { id: 55, sity: "tru" },
+    ];
+
+    let m = n.reduce((accum, item) => {
+      accum.push(item.id);
+      return accum;
+    }, []);
+    console.log(m, 'переиндексировать массив');
+
+    // ISARRAY метод определяет массив получен или нет
+    let k = new Set([1, 2]);
+    console.log(Array.isArray(k));
+    console.log(k);
+
+    // нахождение средне арефметического числа
+    let nums = [
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      5,
+      5,
+      6,
+      4,
+      4,
+      3,
+      1,
+      1,
+      0,
+      0,
+      -1,
+    ];
+    let s = nums.reduce((a, b) => a + b) / nums.length;
+    console.log(s);
+
+    let arr = [2, 5, 7];
+    let res = arr.reduce((accum, elem, index, array) => accum * elem);
+    console.log(res);
+  </script>
+</body>
+
+</html>

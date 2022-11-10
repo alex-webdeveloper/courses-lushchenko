@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Способы переборки массивов loop for, for of, for in</title>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+
+    <script>
+        let arr = [4, 7, 9];
+
+        // console.log(arr);
+        // for (let i = 0; i < arr.length; i++) {
+        // console.log(arr[i]);                // 1 способ
+        // }
+
+        // 2 способ
+        for (key in arr) {
+            console.log(key, arr[key]); // получаем ключи- индекс и значение
+        }
+
+        // отличие in от of:  
+
+        // 3 способ
+        // for (item of arr) {
+        //     console.log(item); // получаем значения 
+        // }
+
+        let allD = document.getElementsByTagName('div');
+        // console.log(allD); //  HTMLCollection(3)
+
+        // console.log(allD);
+        // console.log(allD.length);
+        // console.log(allD[0]);
+
+        // for (let i = 0; i < allD.length; i++) {
+        //     console.log(allD[i]);                // 1 способ работает 
+        // }
+
+        // 2 способ не работает  - не подходит для переборки HTMLCollection
+        // for (key in allD) {
+        // console.log(key);
+        // console.log(allD[key]); //  
+        // }
+
+        // 3 способ  работает
+        // for (item of allD) {
+        //     console.log(item); // получаем значения 
+        // }
+
+
+        let qD = document.querySelectorAll('div');  // NodeList(3)
+        // console.log(qD); // NodeList(3)
+
+        // for (let i = 0; i < qD.length; i++) {
+        //     console.log(qD[i]);                // 1 способ работает 
+        // }
+
+        // 2 способ не работает - не подходит для переборки NodeList(3)
+        // for (key in qD) {
+        //     console.log(key);
+        //     // console.log(qD[key]); //   
+        // }
+
+        // 3 способ  работает
+        for (item of qD) {
+            // console.log(item); // получаем значения 
+        }
+    </script>
+</body>
+
+</html>

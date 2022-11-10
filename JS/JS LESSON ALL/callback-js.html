@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CALLBACK</title>
+  </head>
+  <body>
+    <div class="out-1"></div>
+    <div class="out-2"></div>
+
+    <script>
+      // CALLBACK это функция переданная в другую функцию в качестве аргумента
+      function myFunc(callback) {
+        const a = [1, 2, 3];
+        let item = document.querySelector(".out-1");
+        callback(item, a);
+        // out(item, a);
+      }
+
+      function out(elem, arr) {
+        elem.innerHTML = arr.join("-");
+      }
+
+      function out2(elem, arr) {
+        elem.innerHTML = arr.join(" ");
+      }
+
+      myFunc(out2); // передаем в скобках другую  функцию
+      myFunc(out);
+
+      function getCats(callback2) {
+        fetch("https://cat-fact.herokuapp.com/facts")
+          .then((response) => response.json())
+          .then((data) => {
+            callback2(data);
+          });
+      }
+
+      function showCats(d) {
+        d.forEach((item) => console.log(item.text));
+      }
+
+      function showCats2(d) {
+        let out = "";
+        d.forEach((item) => (out += item.text + "<br>"));
+        document.querySelector(".out-2").innerHTML = out;
+      }
+
+      getCats(showCats);
+      getCats(showCats2);
+    </script>
+  </body>
+</html>

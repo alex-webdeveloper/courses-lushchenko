@@ -1,0 +1,70 @@
+.App {
+  background: rgb(124, 116, 116);
+  text-align: center;
+  height: 100vh;
+}
+
+.tic-tac-toe {
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  border: 2px solid black;
+  background: rgb(237, 231, 231);
+  box-shadow: 0 0 15px 5px rgb(0, 0, 0, 0.8);
+}
+
+.ttt-grid {
+  font-size: 38px;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  float: left;
+  padding: 25px;
+}
+
+.hidden {
+  background: #1dbd4e;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+}
+
+.hidden button {
+  width: 300px;
+  height: 150px;
+  font-size: 40px;
+  border: 1px solid black;
+  box-shadow: inset 0 0 5px 5px rgb(0, 0, 0);
+}
+
+.game {
+  margin: 15px auto;
+}
+
+.game button {
+  font-size: 16px;
+  height: 60px;
+  width: 90px;
+  margin: 10px;
+  background: #1dbd4e;
+  border-radius: 20%;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.count {
+  margin: 0 auto;
+  width: max-content;
+  display: flex;
+}
+
+.player {
+  background: #4f5248;
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: inset 0 0 2px 5px rgb(230, 220, 164);
+}
+
+.player p {
+  color: beige;
+}

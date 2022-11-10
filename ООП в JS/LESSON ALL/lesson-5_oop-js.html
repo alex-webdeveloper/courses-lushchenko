@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    ВОЛШЕБНЫЕ МЕТОДЫ GET, SET (ГЕТТЕРЫ И СЕТТЕРЫ). ПОНЯТИЕ О ПРИВАТНЫХ
+    СВОЙСТВАХ.
+  </title>
+</head>
+
+<body>
+  <script>
+    // this._name  защищенное свойство обозначается нижним почеркиванием(прямое обращение к ним запрещенно)
+    // _name не гласное договоренность что свойства с нижним подчеркиванием нельзя менять и напрямую обращаться
+    // #test запись начинающаяся с # это приватное свойство
+    class User {
+      constructor() {
+        //   this._name = name;
+      }
+      #test = "Hohoho";
+      #url = "https://backend.ex";
+      send() { }
+
+      set name(name) {
+        // для доступа к свойству и передачи данных из вне: student.name = "  Ivan     ";
+        console.log("Privat = " + this.#test);
+        this._name = name.trim().toLowerCase();
+      }
+      get name() {
+        // для чтения свойства console.log(student.name);
+        return this._name;
+      }
+      one() {
+        console.log(this.#test);
+      }
+    }
+    const student = new User();
+    //   student._name = "Oleg"; // User {_name: "Oleg"}
+    student.name = "  Ivan     "; // User {_name: "ivan"}
+    console.log(student);
+    console.log(student.name); // ivan
+    //   console.log(student.#test); // приведет к ошибке
+    console.log(student.test); // undefined
+
+    class User2 extends User { }
+    const student2 = new User2();
+    student2.one();
+    student2.name = "Vasy";
+      //   student2.#test; // ошибка
+  </script>
+</body>
+
+</html>

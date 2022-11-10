@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/mustard-ui.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>ООП в JS - корзина</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Unit 12. Корзина в ООП стиле</h1>
+    <h2>
+      <a href="https://itgid.info/course/object-js" target="_blank">ООП в JS - курс Лущенко Александра</a>
+    </h2>
+    <div class="cart-out"></div>
+  </div>
+  <script src="class/Cart.js"></script>
+  <script src="script.js"></script>
+  <br>
+  <spoiler>Распространяйте больше информации о Ваших товарах!
+    YML 55789 позволяет консолидировать и передавать информацию о товарных предложениях Вашего интернет-магазина в
+    сервисы Яндекса - резульаты поиска и Яндекс-Маркет: URL товаров на Вашем веб-сайте, актуальные цены, наименование и
+    описание
+    номенклатуры, а так же возможность и стоимость доставки. Кроме того, формат YML за время своего существования
+    превратился в один из наиболее распространенных форматов обмена
+    информацией о товарах, который используется для импорта во многие популярные прайс-агрегаторы и веб-сервисы.
+    str.replace(/[aieouy]+/gi, '')
+  </spoiler>
+  <script>
+    let elem = document.querySelector('spoiler');
+    let string = elem.innerHTML.replace(/\d+/gi, '<b>ESS</b>');
+    elem.innerHTML = string;
+    // console.log(string);
+    let pr = document.querySelector('spoiler').innerHTML;
+    console.log(pr);
+  </script>
+</body>
+
+</html>

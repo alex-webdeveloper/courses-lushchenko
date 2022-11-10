@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+    <style>
+        div {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="one">1</div>
+    <div class="one">2</div>
+    <div class="one">3</div>
+    <hr>
+    <div><input type="radio" name="r" value="input type radio 1" checked>input type radio 1</div>
+    <div><input type="radio" name="r" value="input type radio 2">input type radio 1</div>
+    <div><input type="radio" name="r" value="input type radio 3">input type radio 3</div>
+    <button>Push</button>
+    <hr>
+    <div id="out"></div>
+    <hr>
+    <div id="out2"></div>
+    <script>
+        // for for (let i = 5; i > 0; i--) (let i = 0; i < 6; i = i + 2)
+        // while
+        // for (старт- обьявить переменную; работаем пока все верно- до каких пор будет работать прописать условие; счетчик) {...;}
+
+        // for (let i = 0; i < 5; i++) {
+        //    if (i == 4) break;
+        //    console.log('run 4');
+        // вывод поочередно чисел от о до 4 включительно 
+        // }
+
+        // let div = document.querySelectorAll('.one');
+        //console.log(div);
+
+        // for (let i = 0; i < div.length; i++) {
+        //     console.log(div[i]);
+        //     div[i].style.backgroundColor = 'red';
+        //     div[i].onclick = two;
+        // }
+        // function two() {
+        //     console.log('Work!!!!')
+        // }
+
+
+        // let b = document.getElementsByClassName('one');
+        // let c = document.getElementsByTagName('div');
+        // console.log(b);
+        // console.log(c);
+
+        // for (let i = 0; i < div.length; i++) {
+        //     b[i].style.border = '3px solid black';
+        // }
+
+        // document.querySelector('button').onclick = () => {
+        //     let r = document.querySelectorAll('input[type="radio"]');
+        //     //console.log(r);
+        //     for (let i = 0; i < r.length; i++) {
+        //         if (r[i].checked) {
+        //             console.log(r[i].value);
+        //         }
+        //     }
+        // }
+
+        // let out = '';
+        // for (let i = 0; i < 10; i++) {
+        //     if (i == 5) continue; // убирает 5 и продолжает loop
+        //     out += i + 'gap';
+        //     // if (i == 5) break;  // остановка на 5
+        // }
+        // document.querySelector('#out').innerHTML = out;
+
+
+        // for (var i = 0; i < 5; 1++) {
+
+        // }
+        // document.querySelector('#out').innerHTML = out;
+
+
+        // function t1() {
+        //     let out = '';
+        //     for (let i = 1; i < 51; i++) {
+        //         out += i + ' '; //  document.querySelector('#out').innerHTML += i + ' '; замена этого вывода
+        //     }
+        //     document.querySelector('#out').innerHTML = out;
+        // }
+        // document.querySelector('button').onclick = t1;
+
+
+
+        // for (let i = 0; i < 5; i++) { // выводит 0, затем 1, затем 2
+        //     console.log(i + ": Hello, JavaScript!");
+        //     document.querySelector('#out2').innerHTML += 'output loop';
+
+        // }
+        let i = 0;
+        //let out = 'n';
+        let out = document.querySelector('#out2');
+        //  out1.innerHTML = 'n';  out2.innerHTML += 'm'; + чтобы не затирался out1
+        while (i <= 5) {
+            i++;
+            // out = out + i; // out += i; это тоже самое - ставим + чтобы не затирался предедущий вывод
+            //out = 'x' + out;
+            //out.innerHTML = out.innerHTML + ' loop '; // 1 пар.- куда вывод; 2- куда вывод + работает цикл
+            out.innerHTML += ' loop '; // 1пар. куда + куда(с циклом); 2пар. = что выводим 
+        }
+        //document.querySelector('#out2').innerHTML = out;
+    </script>
+</body>
+
+</html>

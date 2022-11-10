@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAT, FILL, KEYS</title>
+</head>
+
+<body>
+    <script> // FLAT метод получает из вложенных массивов одномерный 
+        // elem.flat(указываем уровень вложенности по умолчанию= 1)
+        let a = [3, 4, [[7, 9]], 8, 44];
+        let b = a.flat(2);  // 15 (6) [3, 4, 7, 9, 8, 44]
+        console.log(b);
+
+        a[100] = 111;
+        let z = a.flat(2); // (7) [3, 4, 7, 9, 8, 44, 111] слепливает массив и пропускает empty elem
+        console.log(z);
+
+        // FILL  заполныет массив elem.fill(чем заполнить, от какого индекса , до какого индекса - не включительно)
+        // если последнего параметра нет тогда заполняет до конца массива
+        // ПУСТОЙ МАССИВ НЕ ЗАПОЛНЯЕТ
+        let c = [4, 5, 8, 9];
+        let d = c.fill(2, 0, 3); // (4) [2, 2, 2, 9]
+        console.log(d);
+
+        // KEYS метод получает ключи из массива или масиво подобного обьекта и изтобьекта тоже в ОТДЕЛЬНЫЙ МАССИВ
+        // КЛЮЧИ ВСЕГДА ЯВЛЯЮТСЯ СТРОКАМИ
+        let e = [2, 7, 9];
+        console.log(Object.keys(e)); // (3) ["0", "1", "2"]
+        let ob = { hi: 3, hello: 5 };
+        console.log(Object.keys(ob));  // (2) ["hi", "hello"]
+
+        let pr = {};
+        pr[9] = 88;
+        console.log(pr); //  {9: 88}
+    </script>
+</body>
+
+</html>

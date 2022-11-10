@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МЕТОДЫ МАССИВОВ: JOIN, SPLIT, FOREACH </title>
+</head>
+
+<body>
+    <script> //  метод SPLIT
+        let a = 'Hello, hi, mahai';
+        console.log(a.split(', h')); // получение массива  ["Hello", " hi", " mahai"]
+
+        // // метод  JOIN  - полученние строки из массива 
+        let b = [8, 9, 7]
+        // console.log(b);          //  [8, 9, 7]
+        // console.log(b.join('-'));   //  8-9-7
+
+        // //  метод  FOREACH  - метод перебора массива 
+        b.forEach(function (elem, index) {
+            // console.log(index);
+            //     console.log(elem * 2);
+            //     console.log('--');
+        })
+        // console.log(b);  // [8, 9, 7]
+
+
+        let a9 = [['hi', 'mahai'], ['test', 'best']];
+        // a9 = [2, 5, 7, '99', 'hi']
+        let str = new String(a9);
+        // console.log(str);
+        const url = new URL('https://ирсиб.рф/интернет-магазины/');
+        // console.log(url.hostname);
+        // console.log(url.pathname);
+        console.log(url.href);
+        console.log(url.search);
+        console.log(url.hash);
+
+        (function t9() {
+            let a9 = [['hi', 'mahai'], ['test', 'best']];
+            let a9_res = a9.map(elem => {
+                return elem.join('-');
+            });
+            a9_res = a9_res.join('-');
+            // console.log(a9_res);
+        })();
+    </script>
+</body>
+
+</html>

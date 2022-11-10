@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /app_php
+ErrorDocument 404 /404
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /app_php/index.php?route=$1 [L]

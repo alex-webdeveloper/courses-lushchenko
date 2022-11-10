@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МЕТОДЫ МАССИВОВ JAVASCRIPT: INCLUDES</title>
+</head>
+
+<body>
+    <script> // метод  INCLUDES возвращает true or false;
+
+        const transactions = ['dff54gyyhda2', 'ff544srfrrg', '57fdaw233dsd', '55rtd4321sdf90'];
+
+        if (transactions.includes('ff544srfrrg')) {
+            console.log('yes');
+        }
+        else console.log('not');
+
+
+        // поиск символов по строке
+        const str = 'dfgyhfsed';
+
+        if (str.includes('df')) {
+            console.log(' :yes- str');
+        }
+        else console.log(' :not- str');
+
+
+
+
+        const users = [
+            { 'name': 'Ivanov', 'age': 44 },
+            { 'name': 'Petrov', 'age': 14 },
+            { 'name': 'Kuznezov', 'age': 24 },
+            { 'name': 'Alexeev', 'age': 43 },
+        ]
+
+        // let newUser = users.filter(item => {
+        //     return item.name.includes('ov');
+        // })
+        //  ТОЖЕ САМОЕ (КОЕДА НЕТ {} И ОДНА СТРОКА, RETURN НЕ НУЖЕН)
+        let newUser = users.filter(item => item.name.includes('ov')
+        );
+        console.log(newUser);
+    </script>
+</body>
+
+</html>

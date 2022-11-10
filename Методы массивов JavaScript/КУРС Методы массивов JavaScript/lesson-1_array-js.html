@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПОИСК ЗНАЧЕНИЙ В МАССИВЕ. МЕТОД INDEXOF</title>
+</head>
+
+<body>
+    <script>
+        // indexOf ищет элемент в массиве и если этот элемент найдет возврвщает его позицию(индекс)
+        // если не найдет вернет -1
+        // при поиске нужно привести тип данных и учитывать регистр
+        // arr.indexOf(7, 3); первое знач. что ищем второе с какой позиции(индекс) ищем
+        const a = [9, 8, 7, 5];
+        console.log(a.indexOf(7)); // индекс: 2
+        if (a.indexOf(7) !== -1) console.log('yes'); // (a.indexOf(7) + 1) (~a.indexOf(7)) ТОЖЕ САМОЕ 
+        else console.log('not');
+
+        const b = ['hi', 'hello'];
+        console.log(b.indexOf('hi'));
+
+        const c = [9, 8, 7, 5, 7, 5, 2, 9];
+        console.table(c);
+        console.log(c.indexOf(9, 1));
+
+        function indexOfEmul(arr, item, from = 0) {
+            let result = -1; // всегда возращает когда элемент не найден при indexOf
+            for (i = from; i < arr.length; i++) {
+                if (arr[i] === item) return i;
+            }
+            return result;
+        }
+
+        console.log(indexOfEmul(c, 7, 3));
+
+
+
+
+        let a8 = [1, 2, 3, 1, 3, 2, 55, 23, 53, 24, 55, 3, 1, 5, 2, 3, 5, 4, 6, 7, 12, 53];
+        let res08 = [];
+
+        const f8 = () => {
+            res08 = [];
+            let n = +document.querySelector('.i-8').value;
+            // let i = a8.indexOf(n);
+            // while (i !== -1) {
+            //     res08.push(i);
+            //     i = a8.indexOf(n, i + 1);
+            // }
+
+            for (let k = 0; k < a8.length; k++) {
+                let i = a8.indexOf(n, k);
+                if (i !== -1 && res08.indexOf(i) === -1) {
+                    res08.push(i);
+                }
+            }
+            document.querySelector('.out-8').innerHTML = res08;
+        }
+    </script>
+</body>
+
+</html>

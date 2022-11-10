@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КРАТКИЙ ОБЗОР TOUCH СОБЫТИЙ</title>
+    <style>
+        .block-1,
+        .block-2 {
+            width: 250px;
+            height: 250px;
+            margin: 10px;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="block-1"> </div>
+    <hr>
+    <div class="block-2"> </div>
+    <hr>
+    <div class="out-1"></div>
+    <hr>
+    <div class="out-2"></div>
+    <hr>
+    <div class="out-3"></div>
+    <p>прверка</p>
+    <p>прверка</p>
+    <script>
+        document.querySelector('.block-1').addEventListener('touchstart', myTouch); // касание пальцами
+
+        document.querySelector('.block-1').addEventListener('touchend', myTouchEnd);
+
+        document.querySelector('.block-2').addEventListener('touchmove', myTouchMove); // движение по экрану пальцами
+
+        function myTouch(event) {
+            console.log(event);
+            console.log('start');
+            document.querySelector('.out-1').textContent += 'work';
+            document.querySelector('.out-2').textContent = event.touches.length; // вывод количество прикосновения разными пальцами
+        }
+
+        function myTouchEnd(event) {
+            console.log(event);
+            document.querySelector('.out-3').textContent += 'end';
+        }
+
+        function myTouchMove(event) {
+            // event.preventDefault();
+            console.log(event);
+            document.querySelector('.out-1').textContent += 'move';
+            document.querySelector('.out-2').textContent = event.touches.length;
+            // return false;
+        }
+
+        //  console.log((/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)));
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+
+            alert("Вы используете мобильное устройство или планшет.")
+
+        } else alert("Вы используете ПК.")
+
+        document.querySelectorAll('p').innerHTML = 'work';
+    </script>
+</body>
+
+</html>

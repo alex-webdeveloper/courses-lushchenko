@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUSH И POP. МЕТОДЫ МАССИВОВ</title>
+</head>
+
+<body>
+    <div>
+        <input type="number" id='goods'>
+    </div>
+    <div>
+        <button class="add">Push</button>
+        <button class="pop">Pop</button>
+    </div>
+    <script>// PUSH метод позволяет добавлять элементы в конец массива и так-же возвратить результат 
+
+        let a = [99, 88];
+        console.log(a);
+        a[0] = 55;
+        console.log(a);
+        a[a.length] = 44;
+        console.log(a);
+        a.push(22, 12, 5, 77);
+        console.log(a);
+        console.log(a.push(111));  // выведет длину массива но не сам массив
+
+        function hello(b) {
+            return a.push(b); // решение в одну строку даст не верный вывод 
+        }
+
+        console.log(a);
+
+        //  POP удаляет последний элемент массива
+        let dd = [2, 3, 4, 5];
+        dd.pop();
+        console.log(dd);
+        console.log(a.pop()); // выведет удаленный элемент
+        console.log(a);
+
+        const b = [3];
+        console.log(b);
+        console.log(b.pop()); // выведет удаленный элемент
+        console.log(b);
+        console.log(b.pop()); // выведет undefined когда массив пустой(в цикле сделать условие и потом break)
+        console.log(b);
+
+
+        let car = [];
+        document.querySelector('.add').onclick = () => {
+            let id = +document.querySelector('#goods').value;
+            if (!car.includes(id)) {
+                car.push(id);
+            }
+            console.log(car);
+        }
+
+        document.querySelector('.pop').onclick = () => {
+            let id = +document.querySelector('#goods').value;
+            let goods = car.pop();
+            console.log('Товар id ' + goods + ' Был удален')
+            console.log(car);
+        }
+    </script>
+</body>
+
+</html>

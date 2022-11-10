@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX - АСИНХРОННЫЙ JAVASCRIPT</title>
+</head>
+
+<body>
+    <div>div</div>
+    <div class="out">div</div>
+    <button>GO</button>
+    <script>  // AJAX  new XMLHttpRequest(); это запрос на сервер
+        // cors частая ошибка при запросе на разные сайты
+
+        // let xhttp = new XMLHttpRequest(); // создание нового обьекта
+        // let a = 0;
+
+        let ob = {
+            action: 8,
+            name: 'aleksey',
+            num1: 5,
+            num2: 8,
+            year: 1990,
+            m: [1, 5],
+            d: 1,
+            y: 1
+        }
+        let fruit = "apple";
+        let bag = {
+            [fruit]: 5,
+        };
+        console.log(fruit);
+        document.querySelector('.out').textContent += bag.apple;
+        // `${key}=${a10[key]}&`;
+
+
+        const url = 'http://getpost.itgid.info/index2.php';
+        const auch = '7859d9d42a8834141d529577207c9596';
+        // let ob = {
+
+        // };
+
+        // function string(ob) {
+        //     let out = '';
+        //     for (let key in ob) {
+        //         out += '&' + key + '=' + ob[key];
+        //     }
+        //     return out;
+        // }
+
+
+        // метод GET
+
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () { // создание функции на изминение запроса
+            if (this.readyState == 4 && this.status == 200) {
+                // callback(this.responseText);
+                console.log(xhttp.responseText);
+            }
+        }
+        // xhttp.onreadystatechange = function () { 
+        //     if (xhttp.readyState != 4) return;
+
+        //     if (xhttp.status != 200) {
+        //         console.log(xhttp.status + ': ' + xhttp.statusText);
+        //     } else {
+        //         console.log(xhttp.responseText);
+        //     }
+
+        // }
+        xhttp.open('GET', 'http://getpost.itgid.info/index2.php?auth=859d9d42a8834141d529577207c9596&action=7', true);  // асихронность- true
+        xhttp.send();
+
+
+
+        // let callback = data => {
+        //     document.querySelector('.out').innerHTML = `<img src="${data}" alt="">`;
+        //     console.log(data);
+        // }
+        // document.querySelector('button').onclick = callback;
+
+
+        // `<img src="${this.responseText}" alt="">`
+
+        // function myFunction(data) {
+        //     a = data;
+        //     console.log(a);
+        //     console.log(data + '- это метод GET');
+        // }
+        // console.log(a);
+        // //асихронность это когда ответ с сервера приходит с задержкой и все опперации нужно делать внутри myFunction
+
+
+        // //// POST запрос 
+        let xhttp2 = new XMLHttpRequest();
+        xhttp2.onreadystatechange = function () { // первый метод
+            if (this.readyState == 4 && this.status == 200) {
+                // console.log(this.responseText);
+                myFunction2(this.responseText);
+            }
+        }
+        // xhttp2.onload = () => console.log(xhttp2.response); // второй метод получение данных
+
+        xhttp2.open('POST', 'http://getpost.itgid.info/index2.php?', true);
+        xhttp2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhttp2.send('auth=7859d9d42a8834141d529577207c9596&action=7');
+
+
+        function myFunction2(data) {
+            // console.log(data + '- это метод POST');
+            // console.log(data);
+            // document.querySelector('.out').innerHTML += `<img src="${data}" alt="">`;
+            // document.querySelector('.out').innerHTML += data;
+        }
+
+
+        // document.querySelector('div').textContent = dd.data['name'];
+    </script>
+</body>
+
+</html>

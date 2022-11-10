@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPLIT, JOIN</title>
+</head>
+
+<body>
+    <script> //SPLIT метод разбивает строку и превращает ее в массив
+        // второй параметр указывает какое количество возвращаемых элементов
+        let str = 'Hello';
+        let a = str.split('', 3); // (3) ["H", "e", "l"]
+        console.log(a);
+
+
+        let str_2 = 'Hello,Hi,World,test';
+        let out = '';
+        for (let i = 0; i < str_2.length - 1; i++) {
+            out += str_2[i];
+        }
+        let b = str_2.split(','); (4)["Hello", "Hi", "World", "test"]
+        console.log(b);
+        console.log(out);
+        // JOIN метод создает строку из массива 
+        let c = ['h', 'e', 'l', 'l', 'o'];
+        let d = c.join() //   h,e,l,l,o  это вывод строки
+        console.log(d); 
+    </script>
+</body>
+
+</html>

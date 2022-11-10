@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> НЕМНОГО ТЕОРИИ - РАБОТА С POST, GET ЗАПРОСАМИ</title>
+    <style>
+        /* .hidden {
+            display: none;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- <form action="http://getpost.itgid.info/index2.php?">
+        <input type="text" name="auth">
+        <input type="number" name="action">
+        <input type="submit" value='GO(getpost.itgid.info-GET)'>
+    </form> -->
+
+    <form action="http://localhost:3000">
+        <input type="number" name="task" value="5">
+        <input type="text" name="email" value="rigiy@dira.com">
+        <input type="submit" value='GO(GET)'>
+    </form>
+
+    <form action="http://localhost:3000" method="POST">
+        <!-- <input type="text" name="auth" value="DdC33D7d2C2a7" class="hidden"> -->
+        <input type="number" name="h" value="90">
+        <input type="submit" value='GO(POST)'>
+    </form>
+
+    <!-- // http://getpost.itgid.info/index2.php?auth=DdC33D7d2C2a7&action=1 -->
+    <script>
+//  POST отличается от GET тем что он не дублирует информацию в адресной строке, в браузере не получится этого сделать
+// метод GET не подходит для отправки паролей и когда много информации
+
+// postman.com http://getpost.itgid.info/index2.php?auth=DdC33D7d2C2a7&action=1  это GET запрос
+//  (POST)  http://getpost.itgid.info/index2.php; body; form-data; key auth; value DdC33D7d2C2a7;; key action; value 1
+// 
+    </script>
+</body>
+
+</html>

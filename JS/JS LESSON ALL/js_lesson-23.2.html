@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>вторая часть</title>
+</head>
+
+<body>
+    <button>GO</button>
+    <script>
+        let count = 0;
+        document.querySelector('button').onclick = () => {
+            count++;
+            localStorage.setItem('butt', count);
+        }
+        localStorage.dd = 'hello';
+        let aa = localStorage.dd;
+        console.log(aa)
+    </script>
+</body>
+
+</html>

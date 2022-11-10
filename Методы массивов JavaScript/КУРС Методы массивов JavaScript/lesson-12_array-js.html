@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVERY, SOME</title>
+  </head>
+
+  <body>
+    <script>
+      // EVERY метод создает функцию по обработке массива для каждого элемента
+      // и  после проверки условия возвращает true or false, если ВСЕ ЭЛЕМЕНТЫ попадают под условия
+      // return true; всгда указывать внутри функции
+      // на пустом массиве всегда возращает true
+      const a = [4, 5, 6, 7, 8];
+      let b = a.every((item) => {
+        if (item > 3 && item < 22) return true; // true
+      });
+      console.log(b); // true
+
+      const c = [
+        { name: "ivan", age: 14 },
+        { name: "iren", age: 47 },
+        { name: "alex", age: 14 },
+        { name: "serg", age: 89 },
+        { name: "oleg", age: 17 },
+      ];
+      let d = c.every((item) => {
+        if (item.age >= 16) return true; // false
+      });
+      console.log(d); // false
+
+      // SOME метод создает функцию по обработке массива для каждого элемента
+      // и  после проверки условия возвращает true or false, если хотя-бы ОДИН ЭЛЕМЕНТ попадает под условия
+      // return true; всгда указывать внутри функции
+      // на пустом массиве всегда возращает false
+
+      let f = c.some((item) => {
+        if (item.age >= 16) return true; // true
+      });
+      console.log(f); // true
+
+      let oo = { name: "ivan", age: 14 };
+      let cc = oo.toString();
+      console.log(cc);
+    </script>
+  </body>
+</html>
