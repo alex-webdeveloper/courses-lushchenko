@@ -25,6 +25,6 @@ console.log(Validate.isArray("str"));
 // console.log(Validate.toMoney(200909000.89));
 // console.log(Validate.toMoney(20));
 // console.log(Validate.toMoney(1234999888));
-document.querySelector('div').innerHTML = Validate.toMoney('dsw1234999888');
+document.querySelector('div').innerHTML = Validate.toMoney('1234999888');
 
 // самих tasks в шаблоне не было, брал их с сайта поэтому скидываю ДЗ без tasks
