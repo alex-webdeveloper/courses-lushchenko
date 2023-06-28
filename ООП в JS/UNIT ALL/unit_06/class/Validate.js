@@ -39,9 +39,6 @@ class Validate {
   }
 
   static toMoney(n) {
-    return n.replace(/(\w{3})(?=(\d{10}))/, "$2 $1");
-    // return n.replace(/(\w{3})(\d{10})/, "$2 $1");
-    // return n.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
-    // return n.toFixed(2).replace(/(\d)(?=(\d{3})+(\.))/g, "$1 ");
+    return n.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
   }
 }
